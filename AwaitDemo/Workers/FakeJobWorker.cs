@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace AwaitDemo
 {
-    public class SimpleDemo
+    public class FakeJobWorker
     {
         private readonly FakeJobs fake;
 
-        public SimpleDemo(FakeJobs jobs)
+        public FakeJobWorker(FakeJobs jobs)
         {
             fake = jobs;
         }

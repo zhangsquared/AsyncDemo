@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -132,7 +125,7 @@ namespace WindowsFormsAsync
 
             int i = int.Parse(label4.Text);
             Task<int> t = worker.CalcAsync(i);
-            int j = t.Result; // blocking，主线程
+            int j = t.Result; // blocking，主线程被占用，形成死锁
             label4.Text = j.ToString();
 
             Console.WriteLine($"after OnUpdateLabel4 Thread ID = {Thread.CurrentThread.ManagedThreadId}");
