@@ -1,5 +1,5 @@
 # AsyncDemo
-*****************
+
 
 ## Simple Demo
 
@@ -37,6 +37,7 @@ The performance will differ for Await method
 * `WebRequestDemo`: Sync method > Await Method = Task method
 
 Q: Why for "file reading", await method barely has parallel threads, but for "web request", await method has lots of parallel threads?
+
 A: [DMA](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/dma-programming-techniques)
 
 * Web request: `HttpClient`, `SyndicationClient`
@@ -46,7 +47,7 @@ A: [DMA](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/dma-pr
 
 `await` can improve **throughput**, but not **performance**
 
-*****************
+
 ## Runtime requirement
 
 #### AwaitDemo
