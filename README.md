@@ -11,7 +11,7 @@
 2. async + parallel
 3. async + serial
 
-## .NET WinForm and WPF use case
+### .NET WinForm and WPF use case
 
 `WindowsFormsAsync` project
 
@@ -21,7 +21,7 @@ Button 4 has a deadlock, as a third thread is trying to return to UI thread, whi
 
 * `start` button implementation shows how to update UI thread from a worker thread
 
-## Async, serial, parallel
+### Async, serial, parallel
 
 `WindowsFormsAsync` project and `MyWeb` project
 `MyWeb` project only provide a reponse of "hello world" after 1 second of delay.
@@ -47,15 +47,22 @@ A: [DMA](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/dma-pr
 
 `await` can improve **throughput**, but not **performance**
 
+### FailFast
+How to fast return false if any of parallel running tasks failed, and cancel the remaining parallel tasks?
+* Start(): wait every tasks finished and return a final result. not fail fast
+* Start2() and Start2Async(): fast fail, but cannot cancel the remaining tasks
+* Start3Async(): fast fail, and also cancel the remaining tasks (need to modify mock job function to pass in the cancellation token)
+
+**Question**: how to cancel a non-cancellable task?
+[Cancel asynchronous operations in C#](https://johnthiriet.com/cancel-asynchronous-operation-in-csharp/) 
+
 
 ## Runtime requirement
 
-#### AwaitDemo
-.NET Core 3.1 console app
+#### AwaitDemo, MyWeb, FailFast
+.NET Core 3.1
 
 #### WindowsFormsAsync
 .NET Framework v4.7.2
 
-#### MyWeb
-.NET Core 3.1 web app
 
