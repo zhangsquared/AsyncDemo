@@ -40,10 +40,10 @@ Q: Why for "file reading", await method barely has parallel threads, but for "we
 
 A: [DMA](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/dma-programming-techniques)
 
-* Web request: `HttpClient`, `SyndicationClient`
-* File: `StorageFile`, `StreamWrite`, `StreamReader`, `XmlReader`
-* Media processing: `MediaCapture`, `BitmapEncoder`, `BitmapDecoder`
-* `Socket`
+| Web request | `HttpClient`, `SyndicationClient` |
+| File: `StorageFile`, `StreamWrite`, `StreamReader`, `XmlReader` |
+| Media processing: `MediaCapture`, `BitmapEncoder`, `BitmapDecoder` |
+|  | `Socket` | 
 
 `await` can improve **throughput**, but not **performance**
 
