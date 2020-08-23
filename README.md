@@ -51,9 +51,9 @@ A: [DMA](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/dma-pr
 
 ### Fail Fast
 How to fast return false if any of parallel running tasks failed, and cancel the remaining parallel tasks?
-* Start(): wait every tasks finished and return a final result. not fail fast
-* Start2() and Start2Async(): fast fail, but cannot cancel the remaining tasks
-* Start3Async(): fast fail, and also cancel the remaining tasks (need to modify mock job function to pass in the cancellation token)
+* `Start()`: wait every tasks finished and return a final result. not fail fast
+* `Start2()` and `Start2Async()`: fast fail, but cannot cancel the remaining tasks
+* `Start3Async()`: fast fail, and also cancel the remaining tasks (need to modify mock job function to pass in the cancellation token)
 
 **Question**: how to cancel a non-cancellable task?
 [Cancel asynchronous operations in C#](https://johnthiriet.com/cancel-asynchronous-operation-in-csharp/) 
